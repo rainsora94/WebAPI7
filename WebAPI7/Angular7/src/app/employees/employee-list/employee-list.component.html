@@ -1,0 +1,30 @@
+<!-- <form #form="ngForm" (submit)="onUpdate(form)" autocomplete="off"> -->
+  <button (click)="goToPage('employee')" class="fa fa-plus-square"></button>
+  <table class="table table-striped table-bordered"> 
+  <tr> 
+    <th>EMPCode</th> 
+    <th>FullName</th> 
+    <th>Position</th>
+     <th>Mobile</th>    
+     <th>Options </th>        
+    </tr> 
+  <tr *ngFor="let emp of service.list">
+    <!-- <td (click)="populateForm(emp)">[{{emp.EMPCode}}]-{{emp.FullName}}</td> -->
+    <td (click)="populateForm(emp)">{{emp.EMPCode}}</td>
+    <td (click)="populateForm(emp)">{{emp.FullName}}</td>
+    <td (click)="populateForm(emp)">{{emp.Position}}</td>
+    <td (click)="populateForm(emp)">{{emp.Mobile}}</td>
+    <td>
+      
+  
+      <button (click)="onUpdate(emp.EmployeeID)" class="fa fa-pencil"></button>
+      <button  (click)="loadEmployeeDetails(emp.EmployeeID)"class="fa fa-eye"></button>
+      <button (click)="onDelete(emp.EmployeeID)" class="fa fa-trash"></button>
+    </td>
+    
+    
+    
+  </tr>
+</table>
+
+<!-- </form> -->
